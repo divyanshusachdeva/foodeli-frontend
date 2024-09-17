@@ -1,0 +1,66 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.banner-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the whole banner */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Behind cover and fadout */
+}
+
+.cover {
+  width: 100%;
+  height: 90vh;
+  background: #000;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* Overlays on top of the video */
+}
+
+.fadout {
+  z-index: 3;
+  background-color: transparent;
+  background-image: linear-gradient(
+    180deg,
+    hsla(0, 0%, 8%, 0) 0,
+    hsla(0, 0%, 8%, 0.15) 15%,
+    hsla(0, 0%, 8%, 0.35) 29%,
+    hsla(0, 0%, 8%, 0.58) 44%,
+    #131313 68%,
+    #0d0d0d
+  );
+  background-position: 0 top;
+  background-repeat: repeat-x;
+  background-size: 100% 100%;
+  bottom: -3rem;
+  height: 10vw;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 900px) {
+  .banner {
+    height: 40vh;
+  }
+
+  .cover {
+    height: 40vh;
+  }
+
+  .fadout {
+    bottom: -3rem;
+    height: 20vw;
+  }
+}
